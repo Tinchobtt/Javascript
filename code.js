@@ -1,4 +1,3 @@
-let out = false;
 const naftaPorTrayecto = (consumo, trayecto)=>{
     return trayecto / consumo;
 }
@@ -9,6 +8,7 @@ const precioPorTrayecto = (consumo, trayecto, precioNafta)=>{
 const kmsDisponibles = (consumo, nafta)=>{
     return nafta * consumo;
 }
+let out = false;
 while(!out){
     const menu = parseInt(prompt('1 - Gasto de nafta por trayecto \n2 - Precio de nafta por trayecto \n3 - Cantidad de kms con nafta disponible \n4 - Salir'));
     let consumo, trayecto, nafta, precioNafta;
@@ -26,7 +26,7 @@ while(!out){
             break;
         case 3:
             consumo = parseFloat(prompt('Ingrese el consumo de su auto (En general es entre 8 a 12 km por litro): '));
-            nafta = parseFloat(prompt('Ingrese la cantidad de nafta disponible: '));
+            nafta = parseFloat(prompt('Ingrese la cantidad de nafta disponible (en litros): '));
             alert(`Con ${nafta} litros de nafta podes recorrer ${kmsDisponibles(consumo, nafta)} kilometros`);
             break;
         default:
